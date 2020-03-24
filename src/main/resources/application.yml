@@ -1,6 +1,16 @@
 spring:
   application:
     name: feign
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    discovery:
+      client:
+        simple:
+          instances:
+            github[0]:
+              uri: https://api.github.com
 feign:
   httpclient:
     enabled: true
@@ -11,3 +21,7 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: basic
+
+#github:
+#  ribbon:
+#    listOfServers: https://api.github.com
