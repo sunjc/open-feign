@@ -11,6 +11,15 @@ spring:
           instances:
             github[0]:
               uri: https://api.github.com
+
+logging:
+  level:
+    org:
+      itrunner:
+        openfeign:
+          feign:
+            AuthGitHubClient: DEBUG
+
 feign:
   httpclient:
     enabled: true
