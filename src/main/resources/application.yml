@@ -16,6 +16,7 @@ feign:
     enabled: true
   client:
     default-config: default
+    default-to-properties: true
     config:
       default:
         connectTimeout: 5000
