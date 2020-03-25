@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(name = "github")
+@FeignClient(contextId = "common", name = "github")
 public interface GitHubClient {
     @GetMapping("/repos/{owner}/{repo}/contributors")
     List<Contributor> contributors(@PathVariable("owner") String owner, @PathVariable("repo") String repo);
