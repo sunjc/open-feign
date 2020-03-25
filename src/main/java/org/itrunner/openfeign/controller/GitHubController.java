@@ -3,6 +3,7 @@ package org.itrunner.openfeign.controller;
 import org.itrunner.openfeign.feign.AuthGitHubClient;
 import org.itrunner.openfeign.feign.GitHubClient;
 import org.itrunner.openfeign.model.Contributor;
+import org.itrunner.openfeign.model.Params;
 import org.itrunner.openfeign.model.Traffic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,6 @@ public class GitHubController {
 
     @GetMapping("/traffics")
     public Traffic user() {
-        return authGitHubClient.traffics("sunjc", "open-feign");
+        return authGitHubClient.traffics("sunjc", "open-feign", new Params("week"));
     }
 }
